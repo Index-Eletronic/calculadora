@@ -11,19 +11,25 @@ c = ('\033[m',         # cor 0 = sem cores
 
 plan = list()
 plancopia = list()
+cont = 0
 def caixa():
     while True:
-        plan.append(float(input('DIGITE:A ALTURA EM METROS: '.replace('.', ','))))
-        plan.append(float(input('LARGURA EM METROS: '.replace('.', ','))))
-        plan.append(input('LARGURA EM METROS: '.replace('.', ',')))
-        plan.append(input('O TIPO DE MATERIAL: '.replace('.', ',')))
+        cont = 0
+        plan.append(str(input('O TIPO DE MATERIAL : '.replace('.', ','))))
+        plan.append(float(input('DIGITE:A ALTURA EM METROS : '.replace('.', ','))))
+        plan.append(float(input('LARGURA EM METROS : '.replace('.', ','))))
+        plan.append(float(input('QUANTIDADE : '.replace('.', ','))))
         plancopia.append(plan[:])
-        #calc = (alt * lar) * qt
+        mat = plancopia[0][0]
         plan.clear()
-
-        print(plancopia[0][0])
-
-        print(plancopia)
+        area = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3]))
+        #calc = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3])/5.06)
+        cont += (area/5.06)
+        resp = str(input('TEM MAIS DA MESMA MEDIDA PARA ADICIONAR? [S/N]: '))
+        if resp not in 'Nn':
+            break
+        print(f'O metro quadrado total da Caixa é: {area:.2f}')
+        print(f'E serão necessários {area/5.06:.2f} placas do material {plancopia[0][0]} para fabrica-lá')
         break
 
 
