@@ -30,7 +30,7 @@ def caixa():
             break
         print(f'O metro quadrado total da Caixa é: {area:.2f}')
         print(f'E serão necessários {area/5.06:.2f} placas do material {plancopia[0][0]} para fabrica-lá')
-        break
+        break.
 
 
 #==============Calculando a caixa======================
