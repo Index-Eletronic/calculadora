@@ -24,10 +24,9 @@ def opcao():
 def caixa():
         plan = list()
         plancopia = list()
-        cont = 0
         while True:
             cont = 0
-            plan.append(str(input('O TIPO DE MATERIAL : '.replace('.', ','))))
+            plan.append(str(input('O TIPO DE MATERIAL : ').strip().upper()))
             plan.append(float(input('DIGITE:A ALTURA EM METROS : '.replace('.', ','))))
             plan.append(float(input('LARGURA EM METROS : '.replace('.', ','))))
             plan.append(float(input('QUANTIDADE : '.replace('.', ','))))
@@ -43,6 +42,17 @@ def caixa():
             subtitulos(f'O metro quadrado total da Caixa é: {area:.2f} metros '.upper())
             subtitulos(f'E serão necessários {area/5.06:.2f} CHapas de 2.75 x 1.84 do material {plancopia[0][0]} '.upper())
             break
+
+
+def fundo():
+    plan = list()
+    plancopia = list()
+    while True:
+        cont = 0
+        plan.append(str(input('O Tipo de material: ').strip().upper()))
+        area = caixa(area)
+
+
 
 
 #==============Calculando a caixa======================
