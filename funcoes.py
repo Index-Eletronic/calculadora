@@ -51,6 +51,7 @@ def fundo():
         cont = 0
         plan.append(str(input('O Tipo de material: ').strip().upper()))
         area = caixa(area)
+        print(area)
 
 
 

@@ -15,7 +15,9 @@ elif perg == 1:
     funcoes.caixa()
 
 elif perg == 2:
-    pass
+    funcoes.titulo('  opção para calcular o fundo'.upper())
+    funcoes.fundo()
+
 elif perg == 3:
     pass
 elif perg == 4:
