@@ -21,7 +21,25 @@ def opcao():
             [7] - calcular um painel.
         '''.upper())
 
+
+medida = list()
+copaimed = list()
+lar = copaimed[0][0]
+alt = copaimed[0][1]
+prof = copaimed[0][2]
+area =
+def medidas():
+    while True:
+        medida.append(float(input('DIGITE:A ALTURA EM METROS : '.replace('.', ','))))
+        medida.append(float(input('LARGURA EM METROS : '.replace('.', ','))))
+        medida.append(float(input('PROFUNDIDADE : '.replace('.', ','))))
+        copaimed.append(medida[:])
+        medida.clear()
+        area = (((copaimed[0][0] * copaimed[0][1]) * copaimed[0][2]))
+        break
+
 def caixa():
+    '''
         plan = list()
         plancopia = list()
         while True:
@@ -31,11 +49,11 @@ def caixa():
             plan.append(float(input('LARGURA EM METROS : '.replace('.', ','))))
             plan.append(float(input('QUANTIDADE : '.replace('.', ','))))
             plancopia.append(plan[:])
-            mat = plancopia[0][0]
             plan.clear()
             area = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3]))
             #calc = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3])/5.06)
-            cont += (area/5.06)
+            '''
+            cont += (medidas()/5.06)
             resp = str(input('TEM MAIS DA MESMA MEDIDA PARA ADICIONAR? [S/N]: '))
             if resp not in 'Nn':
                 break
@@ -53,10 +71,6 @@ def fundo():
         area = caixa(area)
         print(area)
 
-
-
-
-#==============Calculando a caixa======================
 
 def titulo(msg, cor=0):
         tam = len(msg) +4
