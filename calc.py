@@ -2,9 +2,8 @@ import funcoes
 
 funcoes.titulo('CALCULADORA DE PLANEJADOS', 2)
 
-
+funcoes.medidas()
 funcoes.opcao()
-
 perg = (int(input(f'Digite sua opção aqui : ').strip()))
 
 if perg == 0:
@@ -30,4 +29,3 @@ elif perg == 7:
     pass
 else:
     funcoes.titulo('Valte sempre!')
-

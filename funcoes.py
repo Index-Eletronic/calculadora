@@ -22,24 +22,23 @@ def opcao():
         '''.upper())
 
 
-medida = list()
-copaimed = list()
-lar = copaimed[0][0]
-alt = copaimed[0][1]
-prof = copaimed[0][2]
-area =
-def medidas():
+def medidas(m='SEM MATERIAL', a=0, l=0, p=0):
+    print('PRIMEIRO DIGITE AS MEDIDAS DO QUE DESEJA CALCULAR.')
+    medida = list()
+    copaimed = list()
     while True:
+        medida.append(str(input('O TIPO DE MATERIAL : ').strip().upper()))
         medida.append(float(input('DIGITE:A ALTURA EM METROS : '.replace('.', ','))))
         medida.append(float(input('LARGURA EM METROS : '.replace('.', ','))))
         medida.append(float(input('PROFUNDIDADE : '.replace('.', ','))))
         copaimed.append(medida[:])
         medida.clear()
-        area = (((copaimed[0][0] * copaimed[0][1]) * copaimed[0][2]))
+        medidas = copaimed[0][0], copaimed[0][1], copaimed[0][2], copaimed[0][3]
+        print(medidas)
         break
 
 def caixa():
-    '''
+
         plan = list()
         plancopia = list()
         while True:
@@ -52,8 +51,7 @@ def caixa():
             plan.clear()
             area = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3]))
             #calc = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3])/5.06)
-            '''
-            cont += (medidas()/5.06)
+            cont += (area/5.06)
             resp = str(input('TEM MAIS DA MESMA MEDIDA PARA ADICIONAR? [S/N]: '))
             if resp not in 'Nn':
                 break
@@ -63,13 +61,27 @@ def caixa():
 
 
 def fundo():
+
     plan = list()
     plancopia = list()
     while True:
         cont = 0
-        plan.append(str(input('O Tipo de material: ').strip().upper()))
-        area = caixa(area)
-        print(area)
+        plan.append(str(input('O TIPO DE MATERIAL : ').strip().upper()))
+        plan.append(float(input('DIGITE:A ALTURA EM METROS : '.replace('.', ','))))
+        plan.append(float(input('LARGURA EM METROS : '.replace('.', ','))))
+        plan.append(float(input('QUANTIDADE : '.replace('.', ','))))
+        plancopia.append(plan[:])
+        plan.clear()
+        area = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3]))
+        # calc = (((plancopia[0][1] * plancopia[0][2]) * plancopia[0][3])/5.06)
+        cont += (area / 5.06)
+        resp = str(input('TEM MAIS DA MESMA MEDIDA PARA ADICIONAR? [S/N]: '))
+        if resp not in 'Nn':
+            break
+        subtitulos(f'O metro quadrado total da Caixa é: {area:.2f} metros '.upper())
+        subtitulos(
+            f'E serão necessários {area / 5.06:.2f} CHapas de 2.75 x 1.84 do material {plancopia[0][0]} '.upper())
+        break
 
 
 def titulo(msg, cor=0):
