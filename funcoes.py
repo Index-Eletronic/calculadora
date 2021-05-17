@@ -37,6 +37,7 @@ def medidas(m='SEM MATERIAL', a=0, l=0, p=0):
         print(medidas)
         break
 
+
 def caixa():
 
         plan = list()
@@ -90,6 +91,7 @@ def titulo(msg, cor=0):
         print(c[2], end='')
         print(f' {msg}\33[m')
         print('~' * tam)
+
 
 def subtitulos(msg):
     print(c[5], end='')
